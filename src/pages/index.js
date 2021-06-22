@@ -3,8 +3,10 @@ import Head from "next/head";
 
 import Layout from "../components/Layout";
 import Footer from "../components/Footer";
+import { getAllTechnologies } from "../styles/dato-cms";
 
-export default function Home() {
+export default function Home({ technologies }) {
+  console.log(technologies);
   return (
     <>
       <Head>
@@ -30,17 +32,23 @@ export default function Home() {
             fontWeight="900"
           >
             Aprenda programação
-            <Box>direto ao ponto</Box>
-            <Box bgGradient="linear(to-l, #7928CA,#FF0080)" bgClip="text">
+            <Text as="span" display="block">
+              direto ao ponto
+            </Text>
+            <Text
+              as="span"
+              bgGradient="linear(to-l, #7928CA,#FF0080)"
+              bgClip="text"
+            >
               100% free.
-            </Box>
+            </Text>
           </Heading>
 
-          <Text fontSize={{ base: "12px", md: "14px", lg: "16px" }}>
-            <Box>
+          <Text fontSize={{ base: "14px", md: "16px", lg: "16px" }}>
+            <Text as="span" display="block">
               Mantenha seus conhecimentos atualizados com as mais novas{" "}
-            </Box>
-            <Box>tecnologias que estão disponíveis no mercado!</Box>
+            </Text>
+            <Text as="span">tecnologias que estão disponíveis no mercado!</Text>
           </Text>
 
           <Box>
@@ -55,6 +63,10 @@ export default function Home() {
               Bora começar!
             </Button>
           </Box>
+
+          {technologies.map((item) => (
+            <h1 key={item.id}>{item.name}</h1>
+          ))}
         </Flex>
 
         <Footer />
@@ -62,3 +74,13 @@ export default function Home() {
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const technologies = await getAllTechnologies();
+  return {
+    props: {
+      technologies,
+    },
+    revalidate: 3600,
+  };
+};
