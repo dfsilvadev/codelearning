@@ -16,8 +16,7 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    heading: "Roboto",
-    body: "Roboto",
+    body: `Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
   },
   styles: {
     global: {
