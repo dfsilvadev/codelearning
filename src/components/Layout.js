@@ -15,7 +15,7 @@ function Layout({ children }) {
       >
         <Topbar />
       </Flex>
-      <Flex as="section" direction="column" paddingTop="6em">
+      <Flex as="section" direction="column" pt="6em">
         <Box w="100%" maxW={1480} height="20" marginX="auto" paddingX="6">
           {children}
         </Box>
