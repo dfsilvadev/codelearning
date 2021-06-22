@@ -8,8 +8,8 @@ export default function SignInButton() {
         type="button"
         flex="1"
         paddingY="2"
-        paddingX="12"
-        marginLeft="6"
+        paddingX={["6", "12"]}
+        marginLeft={["12", "6"]}
         maxWidth={400}
         background="gray.700"
         _hover={{ bg: "gray.800" }}
@@ -20,7 +20,7 @@ export default function SignInButton() {
         fontWeight="bold"
         transition="background 0.2s"
       >
-        Sign in
+        Entrar
       </Flex>
     </Flex>
   );

@@ -1,7 +1,6 @@
 .nav {
   height: 5rem;
-  margin-left: 5rem;
-
+  
   a {
     display: inline-block;
     position: relative;
@@ -12,7 +11,7 @@
     transition: color 0.2s;
 
     & + a {
-      margin-left: 2rem;
+      margin-left: 1rem;
     }
     &:hover {
       color: #fff;
