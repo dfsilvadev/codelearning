@@ -1,11 +1,11 @@
-import Head from 'next/head'
+import Head from "next/head";
 
-import useAuth from '../hooks/useAuth'
+import useAuth from "../hooks/useAuth";
 
 export default function Home() {
   const { user, signIn } = useAuth();
 
-  console.log(user)
+  console.log(user);
 
   return (
     <>
@@ -15,11 +15,11 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1>
-          Welcome to codelearning!
-        </h1>        
-        <button onClick={() => signIn()}>Entrar</button>
+        <h1>Welcome to codelearning!</h1>
+        <button type="button" onClick={() => signIn()}>
+          Entrar
+        </button>
       </main>
     </>
-  )
+  );
 }

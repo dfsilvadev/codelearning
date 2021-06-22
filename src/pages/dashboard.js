@@ -1,7 +1,7 @@
-import useAuth from "../hooks/useAuth"
+import useAuth from "../hooks/useAuth";
 
 export default function Dashboard() {
-  const { user } = useAuth()
+  const { user } = useAuth();
 
-  return <h1>Dashboard: {user?.displayName}</h1>
+  return <h1>Dashboard: {user?.displayName}</h1>;
 }
