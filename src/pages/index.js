@@ -1,6 +1,12 @@
 import Head from 'next/head'
 
+import useAuth from '../hooks/useAuth'
+
 export default function Home() {
+  const { user, signIn } = useAuth();
+
+  console.log(user)
+
   return (
     <>
       <Head>
@@ -12,6 +18,7 @@ export default function Home() {
         <h1>
           Welcome to codelearning!
         </h1>        
+        <button onClick={() => signIn()}>Entrar</button>
       </main>
     </>
   )
