@@ -1,9 +1,10 @@
 import Head from "next/head";
+import Layout from "../components/Layout";
 
 import useAuth from "../hooks/useAuth";
 
 export default function Home() {
-  const { user, signIn } = useAuth();
+  const { signIn } = useAuth();
 
   return (
     <>
@@ -12,12 +13,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <Layout>
         <h1>Welcome to codelearning!</h1>
         <button type="button" onClick={() => signIn()}>
           Entrar
         </button>
-      </main>
+      </Layout>
     </>
   );
 }
