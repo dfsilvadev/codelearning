@@ -14,6 +14,18 @@ const GlobalStyles = ({ children }) => (
         html {
           scroll-behavior: smooth;
         }
+        ::-webkit-scrollbar {
+          width: 7px !important;
+        }
+        ::-webkit-scrollbar-track {
+          background: #1f2029 !important;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: #d53f8c !important;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+          background: #b83280 !important;
+        }
       `}
     />
 
