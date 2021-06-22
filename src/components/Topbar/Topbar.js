@@ -1,6 +1,8 @@
 import { Flex } from "@chakra-ui/react";
 import Logo from "./Logo";
 import Navlink from "./Navlink";
+import Profile from "./Profile";
+import SignInButton from "./SignInButton";
 
 export default function Topbar() {
   return (
@@ -15,6 +17,10 @@ export default function Topbar() {
     >
       <Logo />
       <Navlink />
+      <Flex align="center" marginLeft="auto">
+        <SignInButton />
+        <Profile />
+      </Flex>
     </Flex>
   );
 }
