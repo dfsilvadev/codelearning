@@ -1,9 +1,9 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import Topbar from "./Topbar/Topbar";
 
 function Layout({ children }) {
   return (
-    <Box as="main" w="100%" minH="100vh">
+    <Flex as="main" w="100%" minH="100vh">
       <Flex
         as="header"
         w="100%"
@@ -15,12 +15,17 @@ function Layout({ children }) {
       >
         <Topbar />
       </Flex>
-      <Flex as="section" direction="column" pt="6em">
-        <Box w="100%" maxW={1480} height="20" marginX="auto" paddingX="6">
-          {children}
-        </Box>
+      <Flex
+        as="section"
+        w="100%"
+        pt="6em"
+        align="center"
+        justify="center"
+        direction="column"
+      >
+        {children}
       </Flex>
-    </Box>
+    </Flex>
   );
 }
 
