@@ -1,19 +1,20 @@
-import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
 import Head from "next/head";
+import { Flex, Heading, Text } from "@chakra-ui/react";
 
-import Layout from "../components/Layout";
-import Footer from "../components/Footer";
-import TechnologiesBox from "../components/TechnologiesBox";
-import { getAllTechnologies } from "../services/dato-cms";
+import Footer from "../../components/Footer";
+import Layout from "../../components/Layout";
+import Breadcrumb from "../../components/Breadcrumb";
+import { getAllSeries } from "../../services/dato-cms";
+import SerieCard from "../../components/SerieCard";
 
-export default function Home({ technologies }) {
+export default function Series({ series }) {
   return (
     <>
       <Head>
-        <title>Home | codelearning.</title>
+        <title>Séries | codelearning.</title>
       </Head>
-
       <Layout>
+        <Breadcrumb page="Séries" />
         <Flex
           w="100%"
           maxW={1480}
@@ -31,7 +32,7 @@ export default function Home({ technologies }) {
             mb={4}
             fontWeight="900"
           >
-            Aprenda programação
+            As melhores séries
             <Text as="span" display="block">
               direto ao ponto
             </Text>
@@ -40,33 +41,23 @@ export default function Home({ technologies }) {
               bgGradient="linear(to-l, #7928CA,#FF0080)"
               bgClip="text"
             >
-              100% free.
+              você encontra aqui!
             </Text>
           </Heading>
 
           <Text fontSize={{ base: "14px", md: "16px", lg: "16px" }}>
             <Text as="span" display="block">
-              Mantenha seus conhecimentos atualizados com as mais novas{" "}
+              Acompnahe as melhores séries disponíveis no youtube com as mais
+              novas{" "}
             </Text>
             <Text as="span">tecnologias que estão disponíveis no mercado!</Text>
           </Text>
-
-          <Box>
-            <Button
-              as="a"
-              my={10}
-              colorScheme="gray"
-              variant="outline"
-              size="lg"
-              href="/series"
-            >
-              Bora começar!
-            </Button>
-          </Box>
-
-          <TechnologiesBox technologies={technologies} />
         </Flex>
-
+        <Flex align="center" justify="center" paddingY="10">
+          {series.map((serie) => (
+            <SerieCard key={serie.id} serie={serie} />
+          ))}
+        </Flex>
         <Footer />
       </Layout>
     </>
@@ -74,11 +65,10 @@ export default function Home({ technologies }) {
 }
 
 export const getStaticProps = async () => {
-  const technologies = await getAllTechnologies();
+  const series = await getAllSeries();
+
   return {
-    props: {
-      technologies,
-    },
+    props: { series },
     revalidate: 3600,
   };
 };

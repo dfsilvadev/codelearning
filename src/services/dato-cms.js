@@ -40,4 +40,27 @@ export async function getAllTechnologies() {
   return data.allTechnologies;
 }
 
-export default { getAllTechnologies };
+export async function getAllSeries() {
+  const data = await fetchCmsAPI(`
+    {
+      allSeries {
+        id
+        name
+        slug
+        description
+        seriesType
+        thumbUrl {
+          id
+          url
+        }
+        seasons {
+          id
+        }
+      }
+    }
+  `);
+
+  return data.allSeries;
+}
+
+export default { getAllTechnologies, getAllSeries };
