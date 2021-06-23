@@ -52,6 +52,9 @@ export default function Series({ series }) {
             </Text>
             <Text as="span">tecnologias que estão disponíveis no mercado!</Text>
           </Text>
+          <Text fontSize="xx-large" fontWeight="bold" color="gray.500" mt="8">
+            Séries
+          </Text>
         </Flex>
         <Flex align="center" justify="center" paddingY="10">
           {series.map((serie) => (
