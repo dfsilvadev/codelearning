@@ -47,10 +47,9 @@ export default function Series({ series }) {
 
           <Text fontSize={{ base: "14px", md: "16px", lg: "16px" }}>
             <Text as="span" display="block">
-              Acompnahe as melhores séries disponíveis no youtube com as mais
-              novas{" "}
+              Acompnahe as melhores séries do youtube com as mais novas{" "}
             </Text>
-            <Text as="span">tecnologias que estão disponíveis no mercado!</Text>
+            <Text as="span">tecnologias que do mercado!</Text>
           </Text>
           <Text fontSize="xx-large" fontWeight="bold" color="gray.500" mt="8">
             Séries
