@@ -14,6 +14,7 @@ export default function TechnologiesBox({ technologies }) {
 
   function showAllTechnologies() {
     const all = currentTechnologies.map((t) => {
+      // eslint-disable-next-line no-param-reassign
       t.defaultVisibility = true;
       return t;
     });
