@@ -75,14 +75,15 @@ export async function getAllFullSeries() {
       thumbUrl {
         url
       }
-      features {
-        name
-      }
       seasons {
         id
         slug
         name
         description
+        thumbUrl {
+          id
+          url
+        }
         episodes {
           id
           slug
@@ -92,7 +93,7 @@ export async function getAllFullSeries() {
           author {
             id
           }
-          videosTime
+          videoTime
           thumbUrl {
             id
           }

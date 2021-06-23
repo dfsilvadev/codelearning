@@ -62,6 +62,7 @@ export default function Series({ series }) {
           align="center"
           justify="flex-start"
           paddingY="10"
+          paddingX="6"
         >
           <SimpleGrid columns={[1, null, 3]} spacing="4">
             {series.map((serie) => (

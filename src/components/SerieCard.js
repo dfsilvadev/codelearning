@@ -44,9 +44,9 @@ export default function SerieCard({ serie }) {
           h="55px"
           style={{
             display: "-webkit-box",
-            "-webkit-line-clamp": "3",
+            WebkitLineClamp: "3",
             overflow: "hidden",
-            "-webkit-box-orient": "vertical",
+            WebkitBoxOrient: "vertical",
           }}
           fontSize="12"
           dangerouslySetInnerHTML={{ __html: serie.description }}
