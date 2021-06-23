@@ -63,4 +63,46 @@ export async function getAllSeries() {
   return data.allSeries;
 }
 
-export default { getAllTechnologies, getAllSeries };
+export async function getAllFullSeries() {
+  const data = await fetchCmsAPI(`
+  {
+    allSeries {
+      id
+      name
+      slug
+      description,
+      updatedAt
+      thumbUrl {
+        url
+      }
+      features {
+        name
+      }
+      seasons {
+        id
+        slug
+        name
+        description
+        episodes {
+          id
+          slug
+          name
+          description
+          videoUrl 
+          author {
+            id
+          }
+          videosTime
+          thumbUrl {
+            id
+          }
+        }
+      }
+    }
+  }
+`);
+
+  return data.allSeries;
+}
+
+export default { getAllTechnologies, getAllSeries, getAllFullSeries };

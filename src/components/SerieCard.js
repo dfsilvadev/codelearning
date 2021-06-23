@@ -41,6 +41,7 @@ export default function SerieCard({ serie }) {
           {serie.name}
         </Box>
         <Text
+          h="55px"
           style={{
             display: "-webkit-box",
             "-webkit-line-clamp": "3",

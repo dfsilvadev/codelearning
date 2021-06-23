@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Flex, Heading, Text } from "@chakra-ui/react";
+import { Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react";
 
 import Footer from "../../components/Footer";
 import Layout from "../../components/Layout";
@@ -55,10 +55,19 @@ export default function Series({ series }) {
             Séries
           </Text>
         </Flex>
-        <Flex align="center" justify="center" paddingY="10">
-          {series.map((serie) => (
-            <SerieCard key={serie.id} serie={serie} />
-          ))}
+        <Flex
+          w="100%"
+          maxW={1480}
+          marginX="auto"
+          align="center"
+          justify="flex-start"
+          paddingY="10"
+        >
+          <SimpleGrid columns={[1, null, 3]} spacing="4">
+            {series.map((serie) => (
+              <SerieCard key={serie.id} serie={serie} />
+            ))}
+          </SimpleGrid>
         </Flex>
         <Footer />
       </Layout>
