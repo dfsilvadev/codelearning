@@ -27,11 +27,12 @@ export async function getAllTechnologies() {
   {
     allTechnologies {
       id
-      name
-      defaultVisibile
+      nome
+      defaultVisibility
       logo {
-        url(imgixParams: {fm: jpg, fit: crop, w: 120, h: 120})
+        url(imgixParams: {fm: png, fit: crop, w: 40, h: 40})
       }
+      ordem
     }
   }
   `);

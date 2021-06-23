@@ -3,10 +3,10 @@ import Head from "next/head";
 
 import Layout from "../components/Layout";
 import Footer from "../components/Footer";
+import TechnologiesBox from "../components/TechnologiesBox";
 import { getAllTechnologies } from "../styles/dato-cms";
 
 export default function Home({ technologies }) {
-  console.log(technologies);
   return (
     <>
       <Head>
@@ -55,7 +55,7 @@ export default function Home({ technologies }) {
             <Button
               as="a"
               my={10}
-              colorScheme="pink"
+              colorScheme="gray"
               variant="outline"
               size="lg"
               href="/series"
@@ -64,9 +64,7 @@ export default function Home({ technologies }) {
             </Button>
           </Box>
 
-          {technologies.map((item) => (
-            <h1 key={item.id}>{item.name}</h1>
-          ))}
+          <TechnologiesBox technologies={technologies} />
         </Flex>
 
         <Footer />

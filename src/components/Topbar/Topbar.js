@@ -1,6 +1,6 @@
 import { Flex, useBreakpointValue } from "@chakra-ui/react";
-import MobileMenu from "../MobileMenu";
 
+import MobileMenu from "../MobileMenu";
 import Logo from "./Logo";
 import Navlink from "./Navlink";
 import Profile from "./Profile";
