@@ -21,6 +21,7 @@ export default function Home({ technologies }) {
           flex="1"
           marginX="auto"
           paddingX="6"
+          pb="6"
           justify="center"
           direction="column"
         >

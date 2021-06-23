@@ -35,7 +35,7 @@ export default function TechnologiesBox({ technologies }) {
           ?.map((item) => (
             <WrapItem key={item.id}>
               <Center
-                w="100px"
+                w={["179px", "163px", "100px"]}
                 h="100px"
                 borderWidth="1px"
                 borderRadius="lg"
@@ -60,7 +60,7 @@ export default function TechnologiesBox({ technologies }) {
         {hiddenTechnologies > 0 && (
           <WrapItem>
             <Center
-              w="100px"
+              w={["179px", "163px", "100px"]}
               h="100px"
               borderWidth="1px"
               borderRadius="lg"
