@@ -15,14 +15,7 @@ function Layout({ children }) {
       >
         <Topbar />
       </Flex>
-      <Flex
-        as="section"
-        w="100%"
-        pt="6em"
-        align="center"
-        justify="center"
-        direction="column"
-      >
+      <Flex as="section" w="100%" pt="6em" direction="column">
         {children}
       </Flex>
     </Flex>
