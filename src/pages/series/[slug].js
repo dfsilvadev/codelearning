@@ -1,7 +1,7 @@
-import { Flex } from "@chakra-ui/react";
-import Layout from "../../components/Layout";
-import SerieSlug from "../../components/SerieSlug";
-import { getAllFullSeries } from "../../services/dato-cms";
+import { Flex } from '@chakra-ui/react';
+import Layout from '../../components/Layout';
+import SerieSlug from '../../components/SerieSlug';
+import { getAllFullSeries } from '../../services/dato-cms';
 
 export default function SeriePage({ serie }) {
   return (
@@ -37,13 +37,14 @@ export const getStaticProps = async ({ params }) => {
     description: serie.description,
     id: serie.id,
     name: serie.name,
+    features: serie.features,
     seasons: [...serie.seasons],
     slug: serie.slug,
     thumbUrl: serie.thumbUrl,
-    updatedAt: new Date(serie.updatedAt).toLocaleDateString("pt-BR", {
-      day: "2-digit",
-      month: "long",
-      year: "numeric",
+    updatedAt: new Date(serie.updatedAt).toLocaleDateString('pt-BR', {
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
     }),
   };
 

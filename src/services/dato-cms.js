@@ -3,9 +3,9 @@ const API_TOKEN = process.env.DATOCMS_READ_ONLY_API_TOKEN;
 
 async function fetchCmsAPI(query, { variables } = {}) {
   const res = await fetch(API_URL, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
       Authorization: `Bearer ${API_TOKEN}`,
     },
     body: JSON.stringify({
@@ -16,7 +16,7 @@ async function fetchCmsAPI(query, { variables } = {}) {
 
   const json = await res.json();
   if (json.errors) {
-    throw new Error("Failed to fetch API");
+    throw new Error('Failed to fetch API');
   }
 
   return json.data;
@@ -74,6 +74,9 @@ export async function getAllFullSeries() {
       updatedAt
       thumbUrl {
         url
+      }
+      features {
+        name
       }
       seasons {
         id
