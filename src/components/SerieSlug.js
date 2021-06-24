@@ -2,7 +2,6 @@ import SeriesContent from './SerieContent';
 import SerieHelper from './SerieHeader';
 
 export default function SerieSlug({ serie }) {
-  console.log(serie);
   return (
     <>
       <SerieHelper
