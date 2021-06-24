@@ -1,11 +1,11 @@
-import Head from "next/head";
-import { Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react";
+import Head from 'next/head';
+import { Flex, Heading, SimpleGrid, Text } from '@chakra-ui/react';
 
-import Footer from "../../components/Footer";
-import Layout from "../../components/Layout";
-import Breadcrumb from "../../components/Breadcrumb";
-import { getAllSeries } from "../../services/dato-cms";
-import SerieCard from "../../components/SerieCard";
+import Footer from '../../components/Footer';
+import Layout from '../../components/Layout';
+import Breadcrumb from '../../components/Breadcrumb';
+import { getAllSeries } from '../../services/dato-cms';
+import SerieCard from '../../components/SerieCard';
 
 export default function Series({ series }) {
   return (
@@ -27,8 +27,8 @@ export default function Series({ series }) {
         >
           <Heading
             as="h1"
-            fontSize={{ base: "42px", md: "52px", lg: "72px" }}
-            lineHeight={{ base: "46px", md: "56px", lg: "76px" }}
+            fontSize={{ base: '42px', md: '52px', lg: '72px' }}
+            lineHeight={{ base: '46px', md: '56px', lg: '76px' }}
             mb={4}
             fontWeight="900"
           >
@@ -45,9 +45,9 @@ export default function Series({ series }) {
             </Text>
           </Heading>
 
-          <Text fontSize={{ base: "14px", md: "16px", lg: "16px" }}>
+          <Text fontSize={{ base: '14px', md: '16px', lg: '16px' }}>
             <Text as="span" display="block">
-              Acompnahe as melhores séries do youtube com as mais novas{" "}
+              Acompnahe as melhores séries do youtube com as mais novas{' '}
             </Text>
             <Text as="span">tecnologias que do mercado!</Text>
           </Text>

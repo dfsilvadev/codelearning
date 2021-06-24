@@ -1,4 +1,4 @@
-import { RiHistoryFill } from "react-icons/ri";
+import { RiHistoryFill } from 'react-icons/ri';
 import {
   Box,
   Flex,
@@ -7,7 +7,7 @@ import {
   Image,
   SimpleGrid,
   Text,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
 export default function SerieHelper({ data }) {
   return (
@@ -17,14 +17,17 @@ export default function SerieHelper({ data }) {
       flex="1"
       marginX="auto"
       paddingX="6"
+      paddingBottom="6"
       justify="center"
     >
       <SimpleGrid columns={[1, null, 2]} spacing="10">
-        <Image src={data.thumbUrl} width="100%" borderRadius="8" />
+        <Flex>
+          <Image src={data.thumbUrl} borderRadius="8" />
+        </Flex>
         <Heading
           as="h1"
-          fontSize={{ base: "42px", md: "52px", lg: "62px" }}
-          lineHeight={{ base: "46px", md: "56px", lg: "62px" }}
+          fontSize={{ base: '42px', md: '52px', lg: '62px' }}
+          lineHeight={{ base: '46px', md: '56px', lg: '62px' }}
           mb={4}
           fontWeight="900"
         >
