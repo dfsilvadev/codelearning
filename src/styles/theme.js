@@ -20,10 +20,6 @@ const theme = extendTheme({
   },
   styles: {
     global: {
-      body: {
-        background: 'gray.900',
-        color: 'gray.50',
-      },
       strong: {
         fontFamily: 'Rajdhani',
         fontWeight: 'bold',
