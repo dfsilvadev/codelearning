@@ -47,8 +47,8 @@ export default function Home({ technologies }) {
           <Box w="100%" maxW={1480} marginX="auto" padding="6">
             <TechnologiesCard technologies={technologies} />
           </Box>
+          <Footer />
         </Flex>
-        <Footer />
       </Layout>
     </>
   );

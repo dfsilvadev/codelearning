@@ -29,11 +29,6 @@ export default function Footer() {
         spacing="20px"
       >
         <Center>
-          <Text ass="p" fontSize="small">
-            Todos os direitos reservados
-          </Text>
-        </Center>
-        <Center>
           <HStack spacing="2">
             <Text as="p" fontSize="small">
               SIGAM-ME NAS REDES SOCIAIS
@@ -63,6 +58,11 @@ export default function Footer() {
               </Link>
             </HStack>
           </HStack>
+        </Center>
+        <Center>
+          <Text ass="p" fontSize="small">
+            Todos os direitos reservados
+          </Text>
         </Center>
       </SimpleGrid>
     </Flex>
