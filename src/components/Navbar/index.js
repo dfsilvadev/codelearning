@@ -1,11 +1,30 @@
-import { Flex } from '@chakra-ui/react';
+import {
+  Button,
+  Flex,
+  useBreakpointValue,
+  useDisclosure,
+} from '@chakra-ui/react';
+import { useRef } from 'react';
+
+import useAuth from '../../hooks/useAuth';
+import ScreenMenu from '../ScreenMenu';
+
 import Logo from './Logo';
+import MobileMenuIcon from './MobileMenuIcon';
 import Nav from './Nav';
 import Profile from './Profile';
 import SigninButton from './SigninButton';
 
 export default function Navbar() {
-  const user = true;
+  const btnMobileRef = useRef();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { user } = useAuth();
+
+  const isDrawerSidebar = useBreakpointValue({
+    base: true,
+    lg: false,
+  });
+
   return (
     <Flex
       as="header"
@@ -19,11 +38,33 @@ export default function Navbar() {
     >
       <Flex w="100%" maxW={1480} marginX="auto" paddingX="6">
         <Logo />
-        <Nav />
-        <Flex align="center" marginLeft="auto">
-          <SigninButton showSignInButton={user} />
-          <Profile showProfileData={user} />
-        </Flex>
+        {!isDrawerSidebar ? (
+          <>
+            <Nav />
+            <Flex align="center" marginLeft="auto">
+              <SigninButton showSignInButton={user} />
+              <Profile showProfileData={user} />
+            </Flex>
+          </>
+        ) : (
+          <Flex marginLeft="auto">
+            <Button
+              colorScheme="whatsapp"
+              variant="ghost"
+              ref={btnMobileRef}
+              onClick={onOpen}
+            >
+              <>
+                <MobileMenuIcon />
+                <ScreenMenu
+                  btnMobileRef={btnMobileRef}
+                  isOpen={isOpen}
+                  onClose={onClose}
+                />
+              </>
+            </Button>
+          </Flex>
+        )}
       </Flex>
     </Flex>
   );
