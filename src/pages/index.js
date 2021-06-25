@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Layout from '../components/Layout';
 
 export default function Home() {
   return (
@@ -7,7 +8,9 @@ export default function Home() {
         <title>Home | codelearning.</title>
       </Head>
 
-      <h1>Index</h1>
+      <Layout>
+        <h1>Index</h1>
+      </Layout>
     </>
   );
 }
