@@ -15,7 +15,7 @@ export default function Home() {
   );
 }
 
-export const getStaticProps = async () => ({
-  props: {},
-  revalidate: 3600,
-});
+// export const getStaticProps = async () => ({
+//   props: {},
+//   revalidate: 3600,
+// });

@@ -11,7 +11,7 @@ export default function Series() {
   );
 }
 
-export const getStaticProps = async () => ({
-  props: {},
-  revalidate: 3600,
-});
+// export const getStaticProps = async () => ({
+//   props: {},
+//   revalidate: 3600,
+// });
