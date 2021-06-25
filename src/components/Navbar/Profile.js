@@ -1,4 +1,5 @@
 import { Avatar, Box, Flex, Text } from '@chakra-ui/react';
+import SignOutMenu from '../SignOutMenu';
 
 export default function Profile({ showProfileData, ...props }) {
   return (
@@ -11,12 +12,14 @@ export default function Profile({ showProfileData, ...props }) {
               dfsilva.dxp@gmail.com
             </Text>
           </Box>
-          <Avatar
-            size="md"
-            name="Daniel Silva"
-            background="#00ff5f"
-            {...props}
-          />
+          <SignOutMenu>
+            <Avatar
+              size="md"
+              name="Daniel Silva"
+              background="#00ff5f"
+              {...props}
+            />
+          </SignOutMenu>
         </Flex>
       )}
     </>
