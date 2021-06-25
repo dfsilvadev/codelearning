@@ -1,9 +1,9 @@
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import { Global, css } from "@emotion/react";
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { Global, css } from '@emotion/react';
 
-import { AuthProvider } from "../contexts/AuthContext";
+import { AuthProvider } from '../contexts/AuthContext';
 
-import theme from "../styles/theme";
+import theme from '../styles/theme';
 
 const myTheme = extendTheme(theme);
 
