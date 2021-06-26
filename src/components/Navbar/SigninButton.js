@@ -1,5 +1,22 @@
-import Navlink from './Navlink';
+import { Button } from '@chakra-ui/react';
+import useAuth from '../../hooks/useAuth';
 
-export default function SigninButton({ showSignInButton }) {
-  return <>{!showSignInButton && <Navlink href="#">Entrar</Navlink>}</>;
+export default function SigninButton({ showSignInButton, handleClick }) {
+  const { loading } = useAuth();
+  return (
+    <>
+      {!showSignInButton && (
+        <Button
+          isLoading={loading}
+          fontSize="13px"
+          textTransform="uppercase"
+          colorScheme="black"
+          variant="link"
+          onClick={() => handleClick()}
+        >
+          Entrar
+        </Button>
+      )}
+    </>
+  );
 }
