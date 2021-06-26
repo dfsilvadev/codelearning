@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import {
+  Button,
   Drawer,
   DrawerBody,
   DrawerCloseButton,
@@ -11,8 +12,21 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
+import useAuth from '../hooks/useAuth';
+import Profile from './Navbar/Profile';
 
-export default function ScreenMenu({ btnMobileRef, isOpen, onClose }) {
+function ScreenMenu({ btnMobileRef, isOpen, onClose }) {
+  const { signInWithGithub, signInWithGoogle, user } = useAuth();
+
+  function handleSignInGoogle() {
+    onClose();
+    signInWithGoogle();
+  }
+
+  function handleSignInGithub() {
+    onClose();
+    signInWithGithub();
+  }
   return (
     <Drawer
       isOpen={isOpen}
@@ -24,6 +38,7 @@ export default function ScreenMenu({ btnMobileRef, isOpen, onClose }) {
       <DrawerOverlay />
       <DrawerContent>
         <DrawerHeader>
+          <Profile showProfileData={user} />
           <DrawerCloseButton />
         </DrawerHeader>
 
@@ -33,7 +48,7 @@ export default function ScreenMenu({ btnMobileRef, isOpen, onClose }) {
             h="100%"
             direction="column"
             align="center"
-            justify="center"
+            justify="space-around"
           >
             <Stack>
               <Link href="/">
@@ -55,9 +70,43 @@ export default function ScreenMenu({ btnMobileRef, isOpen, onClose }) {
                 </HStack>
               </Link>
             </Stack>
+            <Stack>
+              <Button
+                onClick={() => handleSignInGoogle()}
+                backgroundColor="gray.900"
+                color="#fff"
+                variant="outline"
+                fontWeight="medium"
+                borderColor="#000"
+                _hover={{ bg: 'gray.700' }}
+                _active={{
+                  bg: 'gray.800',
+                  transform: 'scale(0.95)',
+                }}
+              >
+                Conecte-se com Google
+              </Button>
+              <Button
+                onClick={() => handleSignInGithub()}
+                backgroundColor="gray.900"
+                color="#fff"
+                variant="outline"
+                fontWeight="medium"
+                borderColor="#000"
+                _hover={{ bg: 'gray.700' }}
+                _active={{
+                  bg: 'gray.800',
+                  transform: 'scale(0.95)',
+                }}
+              >
+                Conecte-se com Github
+              </Button>
+            </Stack>
           </Flex>
         </DrawerBody>
       </DrawerContent>
     </Drawer>
   );
 }
+
+export default ScreenMenu;
