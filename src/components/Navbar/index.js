@@ -1,13 +1,7 @@
-import {
-  Button,
-  Flex,
-  useBreakpointValue,
-  useDisclosure,
-} from '@chakra-ui/react';
-import { useRef } from 'react';
+import { Flex, useBreakpointValue } from '@chakra-ui/react';
 
 import useAuth from '../../hooks/useAuth';
-import ScreenMenu from '../ScreenMenu';
+import withAuthModal from '../Modal';
 
 import Logo from './Logo';
 import MobileMenuIcon from './MobileMenuIcon';
@@ -15,9 +9,7 @@ import Nav from './Nav';
 import Profile from './Profile';
 import SigninButton from './SigninButton';
 
-export default function Navbar() {
-  const btnMobileRef = useRef();
-  const { isOpen, onOpen, onClose } = useDisclosure();
+function Navbar({ openAuthModal }) {
   const { user } = useAuth();
 
   const isDrawerSidebar = useBreakpointValue({
@@ -42,30 +34,21 @@ export default function Navbar() {
           <>
             <Nav />
             <Flex align="center" marginLeft="auto">
-              <SigninButton showSignInButton={user} />
+              <SigninButton
+                showSignInButton={user}
+                handleClick={openAuthModal}
+              />
               <Profile showProfileData={user} />
             </Flex>
           </>
         ) : (
           <Flex marginLeft="auto">
-            <Button
-              colorScheme="whatsapp"
-              variant="ghost"
-              ref={btnMobileRef}
-              onClick={onOpen}
-            >
-              <>
-                <MobileMenuIcon />
-                <ScreenMenu
-                  btnMobileRef={btnMobileRef}
-                  isOpen={isOpen}
-                  onClose={onClose}
-                />
-              </>
-            </Button>
+            <MobileMenuIcon />
           </Flex>
         )}
       </Flex>
     </Flex>
   );
 }
+
+export default withAuthModal(Navbar);
