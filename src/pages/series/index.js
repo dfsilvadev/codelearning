@@ -8,7 +8,6 @@ import Layout from '../../components/Layout';
 import SerieCard from '../../components/SerieCard';
 
 export default function Series({ series }) {
-  console.log(series);
   return (
     <>
       <Head>
@@ -18,7 +17,7 @@ export default function Series({ series }) {
         <Flex direction="column" w="100%" h="calc(100vh - 100px)">
           <SimpleGrid
             w="100%"
-            maxW={1480}
+            maxW={1140}
             marginX="auto"
             padding="6"
             flex="1"
@@ -46,7 +45,7 @@ export default function Series({ series }) {
           </SimpleGrid>
           <Flex
             w="100%"
-            maxW={1480}
+            maxW={1140}
             marginX="auto"
             align="flex-start"
             paddingY="6"

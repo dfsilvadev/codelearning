@@ -1,5 +1,6 @@
 import Router from 'next/router';
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
+import { setCookie, destroyCookie } from 'nookies';
 
 import firebase from '../services/firebase';
 
@@ -18,17 +19,27 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  function setSession(session) {
+    if (session) {
+      setCookie(undefined, 'codelearning.auth', session, {
+        maxAge: 60 * 60 * 24 * 30, // 30 dias
+        path: '/',
+      });
+    } else {
+      destroyCookie(undefined, 'codelearning.auth');
+    }
+  }
+
   async function handleUser(currentUser) {
     if (currentUser) {
       const formattedUser = await formatUser(currentUser);
       setUser(formattedUser);
-      console.log(currentUser);
-      console.log(formattedUser);
-
+      setSession(true);
       return formattedUser.email;
     }
 
     setUser(false);
+    setSession(false);
     return false;
   }
 
@@ -61,15 +72,17 @@ export function AuthProvider({ children }) {
     try {
       setLoading(true);
       Router.push('/');
-
-      return await firebase
-        .auth()
-        .signOut()
-        .then(() => setUser(null));
+      await firebase.auth().signOut();
+      await handleUser(false);
     } finally {
       setLoading(false);
     }
   }
+
+  useEffect(() => {
+    const unsubscribe = firebase.auth().onIdTokenChanged(handleUser);
+    return () => unsubscribe();
+  }, []);
 
   return (
     <AuthContext.Provider

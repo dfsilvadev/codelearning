@@ -14,14 +14,14 @@ export default function Footer() {
     <Flex
       direction="column"
       w="100%"
-      h="350px"
+      h="120px"
       align="center"
       background="#000"
       color="#fff"
     >
       <SimpleGrid
         w="100%"
-        maxW={1480}
+        maxW={1140}
         marginX="auto"
         padding="6"
         flex="1"

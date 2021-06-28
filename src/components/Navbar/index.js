@@ -28,7 +28,7 @@ function Navbar({ openAuthModal }) {
       borderBottom="1px solid"
       borderColor="gray.100"
     >
-      <Flex w="100%" maxW={1480} marginX="auto" paddingX="6">
+      <Flex w="100%" maxW={1140} marginX="auto" paddingX="6">
         <Logo />
         {!isDrawerSidebar ? (
           <>

@@ -18,7 +18,7 @@ export default function Home({ technologies }) {
         <Flex direction="column" w="100%" h="calc(100vh - 100px)">
           <SimpleGrid
             w="100%"
-            maxW={1480}
+            maxW={1140}
             marginX="auto"
             padding="6"
             flex="1"
@@ -44,7 +44,7 @@ export default function Home({ technologies }) {
               <Image src="images/learning.svg" />
             </Center>
           </SimpleGrid>
-          <Box w="100%" maxW={1480} marginX="auto" padding="6">
+          <Box w="100%" maxW={1140} marginX="auto" padding="6">
             <TechnologiesCard technologies={technologies} />
           </Box>
           <Footer />

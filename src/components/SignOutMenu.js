@@ -1,14 +1,17 @@
 import {
   Box,
+  Button,
   Popover,
   PopoverArrow,
   PopoverBody,
   PopoverContent,
   PopoverTrigger,
 } from '@chakra-ui/react';
+import useAuth from '../hooks/useAuth';
 import Navlink from './Navbar/Navlink';
 
 export default function SignOutMenu({ children }) {
+  const { signOut } = useAuth();
   return (
     <Popover>
       <PopoverTrigger>
@@ -22,7 +25,15 @@ export default function SignOutMenu({ children }) {
         <PopoverArrow />
         <PopoverBody>
           <Navlink href="#">Perfil</Navlink>
-          <Navlink href="#">Sair</Navlink>
+          <Button
+            fontSize="13px"
+            textTransform="uppercase"
+            colorScheme="black"
+            variant="link"
+            onClick={() => signOut()}
+          >
+            sair
+          </Button>
         </PopoverBody>
       </PopoverContent>
     </Popover>
